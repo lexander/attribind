@@ -5,22 +5,31 @@ JResig in 2007 (!!!)
 [JavaScript Getters and Setters are now prevalent enough to become of actual interest to JavaScript developers.](http://ejohn.org/blog/javascript-getters-and-setters/)
 
 ```javascript
-function Bindable () {
-  this.foo = "bar";
-}
+    
+    var a = {
+        bar: 1,
+        biz: 2
+    };
 
-AttriBind(Bindable);
+    AttriBind(a, {
+        biz: {
+            set: function (v) {
+                this._biz = v + " more";
+            }
+        }
+    });
 
-var bound = new Bindable();
-bound.addEventListener("fooChange", function (e) {
-  console.log(e.newVal);
-});
+    a.addEventListener("barChange", function (e) {
+        console.log(e.detail.newVal);
+    });
 
-console.log(bound.foo); // "bar"
+    a.addEventListener("bizChange", function (e) {
+        console.log(e.detail.newVal);
+    });
 
-bound.foo = "new foo";
-// event listener logs "new foo"
 
+    a.bar = "hi"
+    a.biz = "have some";
 
 ```
 
