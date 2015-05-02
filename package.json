@@ -1,6 +1,6 @@
 {
   "name": "attribind",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Alexander Shusta",
   "devDependencies": {
     "grunt": "^0.4.5",
