@@ -3,6 +3,9 @@
 JResig in 2007 (!!!)
 [JavaScript Getters and Setters are now prevalent enough to become of actual interest to JavaScript developers.](http://ejohn.org/blog/javascript-getters-and-setters/)
 
+So, let's use them to publish mutation events that are triggered by a simple assignment call.
+
+Here's an example that shows callbacks being triggered by assignment to the `bar` and `biz` attributes of the `a` object:
 ```javascript
     
     var a = {
