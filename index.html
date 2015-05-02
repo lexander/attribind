@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>AttriBind</title>
+</head>
+<body>
+
+<script src="src/attribind.js"></script>
+<script>
+    var a = {
+        bar: 1,
+        biz: 2
+    };
+
+    AttriBind(a, {
+        biz: {
+            set: function (v) {
+                this._biz = v + " more";
+            }
+        }
+    });
+
+    a.addEventListener("barChange", function (e) {
+        console.log(e.detail.newVal);
+    });
+
+    a.addEventListener("bizChange", function (e) {
+        console.log(e.detail.newVal);
+    });
+
+
+    a.bar = "hi"
+    a.biz = "have some";
+
+</script>
+</body>
+</html>
