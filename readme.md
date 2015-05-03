@@ -8,6 +8,7 @@ So, let's use them to publish mutation events that are triggered by a simple ass
 Here's an example that shows callbacks being triggered by assignment to the `bar` and `biz` attributes of the `a` object:
 ```javascript
     
+    // included attribind.js
     var a = {
         bar: 1,
         biz: 2
